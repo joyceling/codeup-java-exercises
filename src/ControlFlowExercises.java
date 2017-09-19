@@ -1,20 +1,13 @@
 public class ControlFlowExercises {
     public static void main(String[] args) {
         // LOOP BASICS
-        // do-while loop
-        long i = 2;
-        int base = 1;
+        // for loop
 
-        do {
-            if (i <= 2) {
-                System.out.println(i);
-                i = i*i;
-            } else {
-                System.out.println(i);
-                i = (i * i);
-            };
+        int i = 5;
+        for (i = 5; i <= 15; i++) {
+            System.out.println(i);
+        }
 
-        } while (i < 100000);
 
     };
 }
