@@ -3,10 +3,12 @@ public class ControlFlowExercises {
         // LOOP BASICS
         // for loop
 
-        int i = 5;
-        for (i = 5; i <= 15; i++) {
-            System.out.println(i);
+        for (int i = 0; i <= 100; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i);
+            }
         }
+
 
 
     };
