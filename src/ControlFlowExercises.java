@@ -19,18 +19,29 @@ public class ControlFlowExercises {
         System.out.println("Enter your grade percentage below: ");
         int integer = scan.nextInt();
 
-        if (integer < 100 && integer > 88) {
+        if (integer <= 100 && integer >= 88) {
             System.out.println("You got an A!");
-        } else if (integer < 87 && integer > 80) {
+        } else if (integer <= 87 && integer >= 80) {
             System.out.println("You got a B!");
-        } else if (integer < 79 && integer > 67) {
+        } else if (integer <= 79 && integer >= 67) {
             System.out.println("You got a C!");
-        } else if (integer < 66 && integer > 60) {
+        } else if (integer <= 66 && integer >= 60) {
             System.out.println("You got a D!");
-        } else if (integer < 60 && integer > 0) {
+        } else if (integer <= 60 && integer >= 0) {
             System.out.println("You got an F!");
         } else {
             System.out.println("That isn't a valid entry. Please try again.");
+        }
+
+        scan.nextLine();
+
+        System.out.println("Would you like to continue?");
+        String answer = scan.nextLine();
+        if (answer.equals("yes")) {
+            System.out.println("Enter your grade percentage below: ");
+            int newInteger = scan.nextInt();
+
+        } else if (answer.equals("no")) {
         }
 
 
