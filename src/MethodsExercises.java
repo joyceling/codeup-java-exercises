@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class MethodsExercises {
 
@@ -11,6 +12,7 @@ public class MethodsExercises {
         System.out.println(divide(5, 0));
         System.out.println(modulus(22, 10));
         getFactorial();
+        rollTheDice();
     }
 
     public static int add (int x, int y) {
@@ -78,6 +80,33 @@ public class MethodsExercises {
                 return counter;
             }
         }
+    }
+
+    public static long rollTheDice () {
+        System.out.println("Enter the number of sides for a pair of die: ");
+
+        // new scanner
+        Scanner scan = new Scanner(System.in);
+        int integer = scan.nextInt();
+
+        // random generator
+        Random rand = new Random();
+
+        scan.nextLine();
+        System.out.println("Would you like to roll the die? (y/n)");
+        String yesOrNo = scan.nextLine();
+
+        if (yesOrNo.equalsIgnoreCase("y")) {
+            int n = rand.nextInt(integer) + 1;
+            int o = rand.nextInt(integer) + 1;
+
+            System.out.println("First die: " + n);
+            System.out.println("Second die: " + o);
+
+        }
+
+        return integer;
+
     }
 
 
