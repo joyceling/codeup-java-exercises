@@ -61,6 +61,10 @@ public class MethodsExercises {
             String str = integer + "! = ";
             sb.append(str);
 
+
+            // use a ternary operator to distinguish between just 1 or more than 1!
+
+
             int counter = 1;
             for (int i = 1; i <= integer; i++) {
 
