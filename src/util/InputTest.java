@@ -6,19 +6,14 @@ public class InputTest {
         Scanner scan = new Scanner(System.in);
         Input input1 = new Input(scan);
 
-        System.out.println("Print a string below.");
-        System.out.println(input1.getString());
+        System.out.println(input1.getString("Print a string below"));
 
-        System.out.println("Would you like to continue?");
-        System.out.println(input1.yesNo());
+        System.out.println(input1.yesNo("Would you like to continue?"));
 
+        System.out.println(input1.getInt("Enter a number between 1 and 10"));
+        System.out.println(input1.getInt(1, 10, "Enter a number between 1 and 10"));
 
-        System.out.println("Enter a number between 1 and 10");
-        System.out.println(input1.getInt());
-        System.out.println(input1.getInt(1, 10));
-
-        System.out.println("Enter a decimal number");
-        System.out.println(input1.getDouble());
-        System.out.println(input1.getDouble(1, 10));
+        System.out.println(input1.getDouble("Enter a number between 1 and 10"));
+        System.out.println(input1.getDouble(1, 10, "Enter a number between 1 and 10"));
     }
 }
