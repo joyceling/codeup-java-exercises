@@ -31,13 +31,13 @@ public class Input {
 
     public boolean yesNo(String prompts){
         System.out.println(prompts);
+        System.out.println("(y/n)");
+
         String string2 = getString();
         System.out.println(string2);
-        if (string2.equalsIgnoreCase("yes") | string2.equalsIgnoreCase("y")) {
-            return true;
-        } else {
-            return false;
-        }
+
+
+        return string2.equalsIgnoreCase("yes") | string2.equalsIgnoreCase("y");
     }
 
     public int getInt(int min, int max) {
@@ -72,10 +72,14 @@ public class Input {
     }
 
     public int getInt(){
-        int nextInt = scanner.nextInt();
-        // clean-up task
-        scanner.nextLine();
-        return nextInt;
+        if (this.scanner.hasNextInt()) {
+            return this.scanner.nextInt();
+        } else {
+            System.out.println("Invalid Input! Try again.");
+            scanner.nextLine();
+            return getInt();
+        }
+
     }
 
     public int getInt(String prompts){
@@ -116,7 +120,13 @@ public class Input {
     }
 
     public double getDouble() {
-        return scanner.nextDouble();
+        if (this.scanner.hasNextDouble()) {
+            return this.scanner.nextDouble();
+        } else {
+            System.out.println("Invalid Input! Try again.");
+            scanner.nextLine();
+            return getDouble();
+        }
     }
 
     public double getDouble(String prompts) {

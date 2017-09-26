@@ -8,7 +8,7 @@ public class InputTest {
 
         System.out.println(input1.getString("Print a string below."));
 
-        System.out.println(input1.yesNo("Would you like to continue? (y/n)"));
+        System.out.println(input1.yesNo("Would you like to continue?"));
 
         System.out.println(input1.getInt(1, 10, "Enter a number between 1 and 10"));
 
