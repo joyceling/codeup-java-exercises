@@ -39,29 +39,60 @@ public class GradesApplication {
 
 
         while (true) {
-            System.out.println("\nHere are the github usernames of our students:");
+            System.out.println("\nHere are the github usernames of our students:\n");
             for (String student : students.keySet()) {
                 System.out.print(" | " + student);
             }
 
-            System.out.println("\n\nWhat student would you like to see more information on?");
+            System.out.println();
+            System.out.println();
+            System.out.println();
+            System.out.println("What would you like to do?");
+            System.out.println("1 - Get more information on a specific student");
+            System.out.println("2 - Show info for all students");
 
-            String userInput = input1.getString();
-            for (String username : students.keySet()) {
-                Student student = students.get(username);
+            int userMenuChoice = scan.nextInt();
 
-                if (userInput.equalsIgnoreCase(username)) {
-                    System.out.println("Name: " + student.getName());
-                    System.out.println("Username: " + username);
-                    System.out.println("Current Average:" + student.getGradeAverage());
-                }
+            switch (userMenuChoice) {
+                case 1:
+
+                    System.out.println("\n\nWhat student would you like to see more information on?");
+                    scan.nextLine();
+                    String userInput = input1.getString();
+                    for (String username : students.keySet()) {
+                        Student student = students.get(username);
+
+                        if (userInput.equalsIgnoreCase(username)) {
+                            System.out.println("Name: " + student.getName());
+                            System.out.println("Username: " + username);
+                            System.out.println("Current Average:" + student.getGradeAverage());
+                            System.out.println("All grades:" + student.getGrades());
+
+
+                        }
+                    }
+
+                    break;
+
+                case 2:
+                    for (String username : students.keySet()) {
+                        Student student = students.get(username);
+
+                        System.out.println("\nName: " + student.getName());
+                        System.out.println("Username: " + username);
+                        System.out.println("Current Average:" + student.getGradeAverage());
+                        System.out.println("All grades:" + student.getGrades() +"\n");
+                    }
+                        scan.nextLine();
+                    break;
             }
 
-            System.out.println("\nWould you like to see another student? (y/n)");
 
-            if (!input1.yesNo()) {
-                System.out.println("\nGoodbye, and have a fantastic day! :)");
-                break;
+            System.out.println("\nWould you like to return to main menu? (y/n)");
+
+                if (!input1.yesNo()) {
+                    System.out.println("\nGoodbye, and have a fantastic day! :)");
+                    break;
             }
 
         }
