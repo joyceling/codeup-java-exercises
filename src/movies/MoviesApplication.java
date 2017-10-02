@@ -15,7 +15,8 @@ public class MoviesApplication {
                     "view movies in the animated category",
                     "view movies in the drama category",
                     "view movies in the horror category",
-                    "view movies in the scifi category"};
+                    "view movies in the scifi category"
+            };
 
 
             for (int i = 0; i < 6; i++) {
