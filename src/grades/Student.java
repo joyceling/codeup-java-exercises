@@ -21,8 +21,7 @@ public class Student {
 
     // adds the given grade to the grades property
     public void addGrade(Double grade){
-
-        grades.add(grade);
+        this.grades.add(grade);
     }
 
     // returns the average of the students grades
@@ -32,6 +31,10 @@ public class Student {
         for (int i = 0; i < grades.size(); i++) {
             total = grades.get(i) + total;
         }
+
+//        for (Double grade : grades) {
+//            total += grade;
+//        }
 
         double average = total/grades.size();
         return average;
